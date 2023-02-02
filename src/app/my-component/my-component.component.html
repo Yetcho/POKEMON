@@ -1,0 +1,24 @@
+<input [(ngModel)]="id">
+<BR>
+<BR>
+<input readonly [(ngModel)]="id">
+<BR>
+
+Mon Id est : {{id}}
+
+
+<BR>
+    <input  [(ngModel)]="searchPokeName">
+<BR>
+
+<select [(ngModel)] = "selectedPokeId">
+    <option [value]="poke.id" 
+    *ngFor="let poke of pokes  | filterPokemonPipe : 'name': searchPokeName">{{poke.name}}
+    </option>
+</select>
+<button (click)="go()">Go</button>
+
+<BR>
+    Mon pokemon selectionner est : {{selectedPokeId}}
+<BR>
+
